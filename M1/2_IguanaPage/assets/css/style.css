@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: black;
+    color: #ffffff;
+}
+
+.title-img {
+    width: 100%;
+}
+
+nav {
+    text-align: center;
+    padding: 0 4rem;
+    width: 100vw;
+    background: #000f08;
+
+    font-size: 50px;
+    font-weight: 500;
+  }
+
+footer {
+    padding: 1rem;
+    background: #1E1A13;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 300;
+}
+
+.imageDiv{
+    display: inline-block;
+    margin: 3rem 1rem;
+}
+
+.imageDiv img {
+    width: 316px;
+    height: 202px;
+}
+
+.imageSection {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+ }
+
+ .descripcion, .carContent {
+     width: 80%;
+     margin: 0 auto;
+     text-align: center;
+ }
+
+ .descriptionBlock {
+    display: inline-block;
+    width: 40%;
+    margin: 0 auto;
+    padding: 3rem;
+    vertical-align: middle;
+}
+
+.descriptionBlock img {
+    width: 400px;
+    height: 237px;
+    
+}
+
+.descriptionBlock p {
+    text-align: justify;
+    font-weight: 300;
+}
+
+.car {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 2rem;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.section-title{
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+}
+
+i {
+    color: blanchedalmond;
+}
+
+.graySection {
+    background: #1E1A13;
+}
