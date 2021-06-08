@@ -24,9 +24,11 @@ function Paciente (nombre, edad, rut, diagnostico){
     // creacion de variables y sus correspondientes getter y setter
     var _nombre = nombre;
     Object.defineProperty(this, "nombre", {value:_nombre, configurable: true});
+
     this.getNombre = function (){
         return this.nombre;
     }
+
     this.setNombre = function(nombre) {
         _nombre = nombre;
         Object.defineProperty(this, "nombre", {value:_nombre, configurable: true});
