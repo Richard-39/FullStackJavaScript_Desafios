@@ -1,0 +1,30 @@
+body, .precioRebajado{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+p,  .precioNormal{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #707070;
+}
+
+.precioRebajado {
+    color: #28a745;
+    font-size: 1.3rem;
+}
+
+.precioNormal {
+    font-size: 1.2rem;
+    color: #707070;
+}
+
+footer span {
+    color: #707070;
+}
