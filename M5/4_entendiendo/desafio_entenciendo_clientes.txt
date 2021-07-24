@@ -1,0 +1,33 @@
+-- punto 1
+Se crea la base de datos unidad2
+psql -U root unidad2 < unidad2.sql
+
+-- punto 2
+BEGIN TRANSACTION;
+INSERT INTO compra (id, cliente_id, fecha) values (33, 1, now());
+insert into detalle_compra (id, producto_id, compra_id, cantidad) values (43, 9, (select max(id) from compra), 5);
+UPDATE producto p SET stock = stock-5 WHERE p.id = 9;
+COMMIT;
+SELECT * FROM producto
+
+-- punto 3
+BEGIN TRANSACTION;
+INSERT INTO compra (id, cliente_id, fecha) values (34, 2, now());
+INSERT INTO detalle_compra (id, producto_id, compra_id, cantidad) values (44, 1, (SELECT max(id) FROM compra), 3);
+UPDATE producto p SET stock = stock-3 WHERE p.id = 1;
+
+INSERT INTO detalle_compra (id, producto_id, compra_id, cantidad) values (45, 2, (SELECT max(id) FROM compra), 3);
+UPDATE producto p SET stock = stock-3 WHERE p.id = 2;
+
+INSERT INTO detalle_compra (id, producto_id, compra_id, cantidad) values (46, 8, (SELECT max(id) FROM compra), 3);
+UPDATE producto p SET stock = stock-3 WHERE p.id = 8;
+COMMIT;
+SELECT * FROM producto
+
+-- punto 4
+\set AUTOCOMMIT off;
+INSERT INTO cliente(id, nombre, email) VALUES(11, 'usuario11', 'usuario11@gmail.com');
+SELECT * FROM cliente;
+ROLLBACK;
+SELECT * FROM cliente;
+\set AUTOCOMMIT on;
