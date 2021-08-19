@@ -1,0 +1,4 @@
+A la fecha: Thu Aug 19 2021 00:20:07 GMT-0400 (hora estándar de Chile) 
+Fue realizada cotización con los siguientes datos: 
+Cantidad de pesos a convertir: 3000 pesos 
+Convertido a "dolar" da un total de: $3.80.
