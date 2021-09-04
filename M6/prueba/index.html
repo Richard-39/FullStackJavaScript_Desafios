@@ -236,12 +236,13 @@ Articulos de limpieza</textarea
         const roommateSelected = $("#roommatesSelectModal").val();
         const descripcion = $("#descripcionModal").val();
         const monto = Number($("#montoModal").val());
-        await fetch("http://localhost:3000/gasto?id=" + gastoEditing, {
+        await fetch("http://localhost:3000/gasto", {
           method: "PUT",
           body: JSON.stringify({
             roommate: roommateSelected,
             descripcion,
             monto,
+            id: gastoEditing
           }),
         });
         $("#exampleModal").modal("hide");
