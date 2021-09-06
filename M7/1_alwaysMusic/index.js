@@ -37,10 +37,10 @@ const yargs = require ('yargs');
 // 1. Realizar la conexión con PostgreSQL con la clase Client.
 // UTILIZAR DATOS DE CONEXION A SU BASE DE DATOS - ESTOS DATOS NO SON USABLES DESDE CUALQUIER PC
 const config = {
-    user: 'rabarza',
-    host: '93.188.167.75',
+    user: '',
+    host: '',
     database: 'desafios',
-    password:'richard.69',
+    password:'',
     port: '5432'
 }
 
