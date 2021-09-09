@@ -38,11 +38,11 @@ const yargs = require ('yargs');
 // UTILIZAR DATOS DE CONEXION A SU BASE DE DATOS - ESTOS DATOS NO SON USABLES DESDE CUALQUIER PC
 
 const config = {
-    user: "rabarza",
-    host: "93.188.167.75",
-    password: "richard.69",
-    database: "desafios",
-    port: 5432,
+    user: "",
+    host: "",
+    password: "",
+    database: "",
+    port: '',
     max: 20,
     idleTimeoutMillis: 5000,
     connectionTimeoutMillis: 2000,
