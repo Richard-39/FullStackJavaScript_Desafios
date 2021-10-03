@@ -2,13 +2,15 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="/bootstrap/bootstrap.css" />
 <title>Document</title>
 </head>
 <body>
+    <!-- 2. Incluir en la vista un parcial que contenga el menú del sitio web y sea renderizado antes del Dashboard. -->
     {{> menu}}
 
     <h1>Hola mundo! Usando ahora motores de plantillas =D</h1>
     
-    {{> dashboard productos = ['banana', 'cebollas', 'lechugas', 'papas', 'pimenton', 'tomate']}}
+    {{> dashboard productos = objeto}}
 </body>
 </html>
