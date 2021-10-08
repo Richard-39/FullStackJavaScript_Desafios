@@ -111,7 +111,7 @@ app.post('/registro', async (req, res) => {
             await img.mv(`${imgDirectory}`, (err) => {});
             
             try {
-                const signUser = await pool.query('insert into skaters (email, nombre, password, anos_experiencia, especialidad, foto, estado) values ($1, $2, $3, $4, $5, $6, $7) RETURNING *;', [`${params.email}`, `${params.name}`, `${token}`, params.anios, `${params.especiality}`, `${imgDirectory}`, false]);
+                const signUser = await pool.query('insert into skaters (email, nombre, password, anos_experiencia, especialidad, foto, estado) values ($1, $2, $3, $4, $5, $6, $7) RETURNING *;', [`${params.email}`, `${params.name}`, `${token}`, params.anios, `${params.especiality}`, `/img/${name}.jpg`, false]);
             } catch (error) {
                 console.log('error: ' + error);
             }
@@ -176,4 +176,33 @@ app.get('/logout', (req, res) => {
             localStorage.removeItem('token');
         };
         res.redirect('/?messaje=sessión finalizada');
+});
+
+app.get('/admin', (req, res) => {
+    const token = localStorage.getItem('token');
+    if (token){
+        jwt.verify(token, superPass, (err, data) => {
+            if (err) {
+                console.log('error al validar el token: ' + err);
+                res.redirect('/?messaje=Usuario sin permiso para acceder, contacte con administracion del sitio');
+            } else {
+                pool.query('select * from skaters;', (err, data)=>{
+                    res.render('admin', {layout: 'index', skaters: data.rows});
+                })
+                
+            }
+        });
+    } else {
+        res.redirect('/?messaje=Debe iniciar sessión para acceder');
+    };
+});
+
+app.post('/admin', (req, res)=>{
+    const body = req.body;
+
+    pool.query('update skaters set estado = $1 where id = $2 RETURNING *', [body.estado, body.id], (err, data) => {
+        res.redirect('/admin');
+    });
+
+    
 });
